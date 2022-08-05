@@ -1,1 +1,1 @@
-# Javasctipt-Quiz
+# Javascript-Quiz
