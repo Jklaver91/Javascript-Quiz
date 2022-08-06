@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+    background-color: #f9fbfd;
+  }
+  
+#StartQuiz {
+    background-color: #7cbf75;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    font-size: 4vw;
+    border-radius: 10px;
+}
+
+#Timer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 3vw;
+}
