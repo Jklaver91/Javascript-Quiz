@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Quiz with Timer</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+    <header class="text-white text-center h1 bg-primary p-4">JavaScript Quiz!
+    </header>
     <div class="container mt-5">
-    <h5 class="card-text float-right font-weight-bold">Total Time: <br><span id = "time"> 00 </span> seconds </h5>
- 
+    <h5 class="card-text float-right font-weight-bold">Total Time: <br><span id = "coundownNumber"> 75 </span> seconds </h5>
+        
     <!-- Start  section-->
     <div class="col-md-8 border p-4">
         <div class="card-body">
@@ -18,13 +21,31 @@
         </div>
         <br>
 
-        <div class="start-page">
+        <div class="" id="start-page">
             <h3 class="text-center mb-5">HTML, CSS, JS quiz!</h3>
             <p>You will have 75 seconds to and the question.</p>
             <p>Every question answered incorrectly will subtract 10 seconds from the timer.</p>
-            <button class="btn btn-success d-flex mx-auto mt-4" id="btn"><h5>Start Quiz!</h5></button>
+            <button class="btn btn-success d-flex mx-auto mt-4" id="start"><h5>Start Quiz!</h5></button>
         </div>
 
+        <!--quiz section  -->
+        <div class="d-none" id="quiz">
+            <div class="card body">
+                <h5 class="card-text font-weight-bold" id="question"></h5>
+            </div>
+            <div class="col-md-8 p-4" id="answers">
+                <button class="btn btn-block btn-outline-success text-left option" id="options1"></button>
+                <button class="btn btn-block btn-outline-success text-left option" id="options2"></button>
+                <button class="btn btn-block btn-outline-success text-left option" id="options3"></button>
+                <button class="btn btn-block btn-outline-success text-left option" id="options4"></button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="d-none" id="result">
+            <h3 class="mt-5 display-4">Marks <span id="marks"></span>/5</h3>
+            <h3 class="mt-4">Result : <span id="percentage">100%</span></h3>
+        </div>
     </div>
     
     </div>
@@ -34,6 +55,6 @@
 
     <script src="./assets/js/script.js  "></script>
     <script src="./assets/js/questions.js"></script>
-
+ 
 </body>
 </html>
