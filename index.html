@@ -16,15 +16,13 @@
     <!-- Start  section-->
     <div class="col-md-8 border p-4">
         <div class="card-body">
-            <!-- <h4 class="card-text float-left font-weight-bold">Javascript Quiz!</h4> -->
-            <h5>(<span id="numer">0</span> of 5)</h5>
         </div>
         <br>
 
         <div class="" id="start-page">
             <h3 class="text-center mb-5">HTML, CSS, JS quiz!</h3>
-            <p>You will have 75 seconds to and the question.</p>
-            <p>Every question answered incorrectly will subtract 10 seconds from the timer.</p>
+            <p class="text-center">You will have 75 seconds to and the question.</p>
+            <p class="text-center">Every question answered incorrectly will subtract 10 seconds from the timer.</p>
             <button class="btn btn-success d-flex mx-auto mt-4" id="start"><h5>Start Quiz!</h5></button>
         </div>
 
@@ -34,17 +32,27 @@
                 <h5 class="card-text font-weight-bold" id="question"></h5>
             </div>
             <div class="col-md-8 p-4" id="answers">
-                <button class="btn btn-block btn-outline-success text-left option" id="options1"></button>
-                <button class="btn btn-block btn-outline-success text-left option" id="options2"></button>
-                <button class="btn btn-block btn-outline-success text-left option" id="options3"></button>
-                <button class="btn btn-block btn-outline-success text-left option" id="options4"></button>
+                <ul id="ul">
+                    <li id="option1" onclick="button(this)"></li>
+                    <li id="option2" onclick="button(this)"></li>
+                    <li id="option3" onclick="button(this)"></li>
+                    <li id="option4" onclick="button(this)"></li>
+                </ul>
             </div>
+            <button class="btn btn-success d-flex mx-auto mt-4" id="next" onclick="next()"><h5>Next!</h5></button>
         </div>
 
         <!-- Results -->
         <div class="d-none" id="result">
-            <h3 class="mt-5 display-4">Marks <span id="marks"></span>/5</h3>
-            <h3 class="mt-4">Result : <span id="percentage">100%</span></h3>
+            <h3 class="mt-5 display-4 text-center">Marks <span id="marks">0/5</span></h3>
+            <h3 class="mt-4 text-center">Result : <span id="percentage">0</span>%</h3>
+            <div class='form-row justify-content-center'>
+                <input type="text" placeholder="Initials" class="text-center">
+            </div>
+            <div class="row">
+            <button class="btn btn-success d-flex mx-auto mt-4" id="start">Submit score!</button>
+            <button class="text-white btn btn-info d-flex mx-auto mt-4" id="reload">Try again?</button>
+            </div>
         </div>
     </div>
     
