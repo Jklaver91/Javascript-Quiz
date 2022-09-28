@@ -51,6 +51,7 @@ var app={
             ul.classList.add("d-none");
             nextButton.classList.add("d-none");
             nextButton.classList.remove("d-flex");
+            clearInterval(timerId);
             endQuiz();
         }
     },
@@ -87,9 +88,15 @@ var app={
     },
     score:0,
     scoreCard:function(){
-        marks.innerHTML=this.score + "/" + this.questions.length;
-        percentage.innerHTML= this.score / this.questions.length * 100;
-        
+        console.log(this.score);
+        if (this.score >= 1) {
+            marks.innerHTML=this.score + "/" + this.questions.length;
+            percentage.innerHTML= this.score / this.questions.length * 100;
+            storeScore = localStorage.setItem('percentage', this.score / this.questions.length * 100);
+        }
+        else{
+            storeScore = localStorage.setItem('percentage', "0");
+        }
     }
 }
 
@@ -152,4 +159,33 @@ function resultCards() {
 
 document.getElementById("reload").addEventListener("click", function () {
     window.location.reload();
+});
+
+document.getElementById("submit").addEventListener("click", function () {
+    let initials = document.getElementById("initialInput").value;
+    storeInitials = localStorage.setItem('initials', initials);
+
+});
+
+document.getElementById("viewScores").addEventListener("click", function () {
+    if(document.getElementById("viewScores").value=="OFF"){
+        document.getElementById("scoresDiv").classList.remove("d-none");
+        document.getElementById("viewScores").value="ON";
+        
+        var retrievedScore = localStorage.getItem('percentage');
+
+        console.log(JSON.parse(retrievedScore));
+        storeScore.innerHTML= JSON.parse(retrievedScore);
+
+        
+        var retrievedInitial = localStorage.getItem('initials');
+
+        console.log(retrievedInitial);
+        storeInitial.innerHTML= retrievedInitial;
+    }
+
+    else {
+        document.getElementById("scoresDiv").classList.add("d-none");
+        document.getElementById("viewScores").value="OFF";
+    }
 });

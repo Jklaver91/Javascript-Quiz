@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,62 +8,73 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+
 <body>
     <header class="text-white text-center h1 bg-primary p-4">JavaScript Quiz!
     </header>
     <div class="container mt-5">
-    <h5 class="card-text float-right font-weight-bold">Total Time: <br><span id = "coundownNumber"> 75 </span> seconds </h5>
-        
-    <!-- Start  section-->
-    <div class="col-md-8 border p-4">
-        <div class="card-body">
-        </div>
-        <br>
+        <h5 class="card-text float-right font-weight-bold">Total Time: <br><span id="coundownNumber"> 75 </span> seconds
+        </h5>
 
-        <div class="" id="start-page">
-            <h3 class="text-center mb-5">HTML, CSS, JS quiz!</h3>
-            <p class="text-center">You will have 75 seconds to and the question.</p>
-            <p class="text-center">Every question answered incorrectly will subtract 10 seconds from the timer.</p>
-            <button class="btn btn-success d-flex mx-auto mt-4" id="start"><h5>Start Quiz!</h5></button>
-        </div>
+        <!-- Start  section-->
+        <div class="col-md-8 border p-4">
+            <div class="card-body">
+            </div>
+            <br>
+            <div class="" id="start-page">
+                <h3 class="text-center mb-5">HTML, CSS, JS quiz!</h3>
+                <p class="text-center">You will have 75 seconds to and the question.</p>
+                <p class="text-center">Every question answered incorrectly will subtract 10 seconds from the timer.</p>
+                <div class="row">
+                    <button class="btn btn-success d-flex mx-auto mt-4" id="start">
+                        <h5>Start Quiz!</h5>
+                    </button>
+                    <button class="btn btn-success d-flex mx-auto mt-4" id="viewScores">
+                        <h5>View Scores?!</h5>
+                    </button>
+                </div>
+                <div class="text-center d-none border border-primary mt-3" id="scoresDiv">Last attempt was by <span id="storeInitial"></span>, who scored <span id="storeScore"></span>%</div>
+            </div>
+            <!--quiz section  -->
+            <div class="d-none" id="quiz">
+                <div class="card body">
+                    <h5 class="card-text font-weight-bold" id="question"></h5>
+                </div>
+                <div class="col-md-8 p-4" id="answers">
+                    <ul id="ul">
+                        <li id="option1" onclick="button(this)"></li>
+                        <li id="option2" onclick="button(this)"></li>
+                        <li id="option3" onclick="button(this)"></li>
+                        <li id="option4" onclick="button(this)"></li>
+                    </ul>
+                </div>
+                <button class="btn btn-success d-flex mx-auto mt-4" id="next" onclick="next()">
+                    <h5>Next!</h5>
+                </button>
+            </div>
 
-        <!--quiz section  -->
-        <div class="d-none" id="quiz">
-            <div class="card body">
-                <h5 class="card-text font-weight-bold" id="question"></h5>
-            </div>
-            <div class="col-md-8 p-4" id="answers">
-                <ul id="ul">
-                    <li id="option1" onclick="button(this)"></li>
-                    <li id="option2" onclick="button(this)"></li>
-                    <li id="option3" onclick="button(this)"></li>
-                    <li id="option4" onclick="button(this)"></li>
-                </ul>
-            </div>
-            <button class="btn btn-success d-flex mx-auto mt-4" id="next" onclick="next()"><h5>Next!</h5></button>
-        </div>
-
-        <!-- Results -->
-        <div class="d-none" id="result">
-            <h3 class="mt-5 display-4 text-center">Marks <span id="marks">0/5</span></h3>
-            <h3 class="mt-4 text-center">Result : <span id="percentage">0</span>%</h3>
-            <div class='form-row justify-content-center'>
-                <input type="text" placeholder="Initials" class="text-center">
-            </div>
-            <div class="row">
-            <button class="btn btn-success d-flex mx-auto mt-4" id="start">Submit score!</button>
-            <button class="text-white btn btn-info d-flex mx-auto mt-4" id="reload">Try again?</button>
+            <!-- Results -->
+            <div class="d-none" id="result">
+                <h3 class="mt-5 display-4 text-center">Marks <span id="marks">0/5</span></h3>
+                <h3 class="mt-4 text-center">Result : <span id="percentage">0</span>%</h3>
+                <div class='form-row justify-content-center'>
+                </div>
+                <div class="row">
+                    <button class="align-self-center text-white btn btn-info d-flex mx-auto mt-4" id="reload">Try again?</button>
+                    <form class="mx-5">
+                            <button class="btn btn-success d-flex mx-auto mt-4" id="submit">Submit score!</button>   
+                            <input  class="mt-1" id="initialInput" type="text" placeholder="Initials" />
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    
-    </div>
-
 
 
 
     <script src="./assets/js/script.js  "></script>
     <script src="./assets/js/questions.js"></script>
- 
+
 </body>
+
 </html>
